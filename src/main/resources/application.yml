@@ -1,0 +1,6 @@
+server:
+  port: 9091
+  session-timeout: 900
+  compression:
+    enabled: true
+    mime-types: text/html,text/css,application/javascript,application/json

@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input, button {
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.uiview {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color:navajowhite;
+    text-align: center;
+    margin: 100px auto 100px auto;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: cornflowerblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header {
+    text-align: center;
+}
