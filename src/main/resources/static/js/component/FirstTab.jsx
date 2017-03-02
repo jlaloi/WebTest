@@ -3,16 +3,21 @@ import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 const local = require('./../locales.jsx');
 
-const FirstTab = React.createClass({
-    getInitialState() {
-        return { name: 'Julien' };
-    },
+class FirstTab extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: 'Julien'
+        };
+        // @TODO Find a proper fix or back to React.createClass
+        this.handleNameChange = this.handleNameChange.bind(this);
+    }
     handleNameChange(e) {
         this.setState({ name: e.target.value });
-    },
-    handleChange: function (e) {
+    }
+    handleChange(e) {
         counterpart.setLocale(e.target.value);
-    },
+    }
     render() {
         return (
             <div>
@@ -26,6 +31,6 @@ const FirstTab = React.createClass({
             </div>
         );
     }
-});
+}
 
 export default FirstTab;

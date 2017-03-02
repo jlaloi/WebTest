@@ -23,18 +23,14 @@ public class TataneRest {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    Iterable<Tatane> addTatane(@RequestBody Tatane tatane) {
-        tataneRepository.save(tatane);
-        return tataneRepository.findAll();
+    Tatane addTatane(@RequestBody Tatane tatane) {
+        return tataneRepository.save(tatane);
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
-    Iterable<Tatane> delTatane(@PathVariable Long id) {
+    void delTatane(@PathVariable Long id) {
         tataneRepository.delete(id);
-        return tataneRepository.findAll();
     }
-
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     @ResponseBody
