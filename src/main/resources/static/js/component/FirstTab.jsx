@@ -4,11 +4,8 @@ import counterpart from 'counterpart';
 const local = require('./../locales.jsx');
 
 class FirstTab extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Julien'
-        };
+    state = {
+        name: 'Julien'
     }
     handleNameChange = (e) => {
         this.setState({ name: e.target.value });

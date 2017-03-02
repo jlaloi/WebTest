@@ -21,11 +21,8 @@ const UserCreate = (props) => {
 };
 
 class UserTab extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: []
-        };
+    state = {
+        users: []
     }
     componentDidMount = () => {
         this.loadUsersFromServer()
@@ -44,7 +41,7 @@ class UserTab extends React.Component {
             .then(this.loadUsersFromServer)
     }
     render() {
-        var users = this.state.users.map((user) => (<User key={user.id} user={user} deleteUser={this.deleteUser} />));
+        const users = this.state.users.map((user) => (<User key={user.id} user={user} deleteUser={this.deleteUser} />));
         return (
             <div>
                 <h2>This is the user tab!</h2>
