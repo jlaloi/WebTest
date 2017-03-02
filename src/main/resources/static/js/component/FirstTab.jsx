@@ -9,13 +9,11 @@ class FirstTab extends React.Component {
         this.state = {
             name: 'Julien'
         };
-        // @TODO Find a proper fix or back to React.createClass
-        this.handleNameChange = this.handleNameChange.bind(this);
     }
-    handleNameChange(e) {
+    handleNameChange = (e) => {
         this.setState({ name: e.target.value });
     }
-    handleChange(e) {
+    handleChange = (e) => {
         counterpart.setLocale(e.target.value);
     }
     render() {

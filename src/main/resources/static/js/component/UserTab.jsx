@@ -26,24 +26,20 @@ class UserTab extends React.Component {
         this.state = {
             users: []
         };
-        // @TODO Find a proper fix or back to React.createClass
-        this.createUser = this.createUser.bind(this);
-        this.loadUsersFromServer = this.loadUsersFromServer.bind(this);
-        this.deleteUser = this.deleteUser.bind(this);
     }
-    componentDidMount() {
-        this.loadUsersFromServer();
+    componentDidMount = () => {
+        this.loadUsersFromServer()
     }
-    loadUsersFromServer() {
+    loadUsersFromServer = () => {
         Http.get('/tatane')
             .then(response => response.json())
             .then(json => this.setState({ users: json }))
     }
-    createUser(user) {
+    createUser = (user) => {
         Http.post('/tatane', user)
             .then(this.loadUsersFromServer)
     }
-    deleteUser(user) {
+    deleteUser = (user) => {
         Http.delete('/tatane/' + user.id)
             .then(this.loadUsersFromServer)
     }
