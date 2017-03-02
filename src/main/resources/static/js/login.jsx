@@ -12,7 +12,7 @@ const Login = () => (
     <div>
         <Translate component="h2" content="login.title" />
         <form method="POST" action="/login.html">
-            <Translate component="input" type="text" name="username" attributes={{ placeholder: 'login.username' }} />
+            <Translate component="input" type="text" name="username" autoFocus attributes={{ placeholder: 'login.username' }} />
             <Translate component="input" type="password" name="password" attributes={{ placeholder: 'login.password' }} />
             <Translate component="input" type="submit" attributes={{ value: 'login.login' }} />
         </form>

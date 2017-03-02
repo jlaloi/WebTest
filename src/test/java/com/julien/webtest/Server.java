@@ -1,7 +1,6 @@
 package com.julien.webtest;
 
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -65,8 +64,8 @@ public class Server {
                 .perform(post("/tatane").contentType(MediaType.APPLICATION_JSON).content("{\"name\": \"" + customTatane + "\"}").session(httpSession))
                 .andExpect(status().isOk())
                 .andReturn();
-        JSONArray createObject = new JSONArray(mvcCreate.getResponse().getContentAsString());
-        String id = createObject.getJSONObject(0).getString("id");
+        JSONObject createObject = new JSONObject(mvcCreate.getResponse().getContentAsString());
+        String id = createObject.getString("id");
         assertNotNull(id);
 
         // FIND TATANE
@@ -82,6 +81,6 @@ public class Server {
                 .perform(delete("/tatane/" + id).session(httpSession))
                 .andExpect(status().isOk())
                 .andReturn();
-        assertEquals("[]", mvcDelete.getResponse().getContentAsString());
+        assertEquals("", mvcDelete.getResponse().getContentAsString());
     }
 }
